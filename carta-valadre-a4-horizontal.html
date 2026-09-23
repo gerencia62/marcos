@@ -80,6 +80,16 @@
   .rec-legend svg { width: 18px; height: 18px; }
   .allergens.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px 14px; font-size: 12px; color: var(--ink-soft); }
   .allergens.grid i { width: 15px; height: 15px; font-size: 8.5px; }
+  /* Portada a página completa */
+  .page.cover {
+    background: var(--cover); color: var(--cover-ink);
+    grid-template-rows: 1fr; grid-template-columns: 1fr 1.25fr;
+    align-items: center; gap: 30px; padding: 60px 70px 60px 80px;
+  }
+  .cover-text { display: grid; justify-items: center; text-align: center; gap: 12px; }
+  .page.cover .brand { font-size: 60px; }
+  .page.cover .hand { font-size: 40px; margin-top: 26px; }
+  .page.cover .landscape { width: 100%; }
   .page.back { background: var(--cover); color: var(--cover-ink); grid-template-rows: 1fr auto; text-align: center; }
   .back-in { display: grid; justify-items: center; align-content: center; gap: 12px; padding: 40px 60px 0; }
   .back-branch { width: 120px; height: auto; margin-bottom: 8px; }
@@ -205,13 +215,15 @@
 <main class="stack">
 
   <div class="stage">
-    <article class="page first" aria-label="Portada">
-      <aside class="panel">
-        <div class="brand-wrap">
-          <h1 class="brand">VALADRE</h1>
-          <p class="tagline">Cocina mediterránea</p>
-        </div>
-        <svg class="landscape" viewBox="0 0 400 300" role="img" aria-label="Huerto de naranjos de la Ribera, el río Xúquer y la Serra de la Murta">
+    <article class="page cover" aria-label="Portada">
+      <div class="cover-text">
+        <svg class="back-branch" viewBox="0 0 180 60" aria-hidden="true"><use href="#olive-branch"/></svg>
+        <h1 class="brand">VALADRE</h1>
+        <p class="tagline">Cocina mediterránea</p>
+        <p class="hand">De la Ribera a la taula</p>
+        <p class="place">Alzira · La Ribera</p>
+      </div>
+      <svg class="landscape" viewBox="0 0 400 300" role="img" aria-label="Huerto de naranjos de la Ribera, el río Xúquer y la Serra de la Murta">
           <path class="ln" d="M0 118 C 30 112, 48 96, 70 92 S 104 70, 122 66 S 150 80, 168 84 S 196 58, 214 52 S 240 62, 256 72 S 290 86, 312 80 S 350 94, 400 104"/>
         <path class="ln thin" d="M0 128 C 40 122, 80 116, 120 114 S 190 104, 230 108 S 320 116, 400 118"/>
         <path class="ln hair" d="M128 83.0 l -7 14"/>
@@ -549,35 +561,7 @@
         <circle class="fruit" cx="364.5" cy="253.0" r="2.8"/>
         <circle class="fruit" cx="372.4" cy="253.7" r="2.8"/>
         <circle class="fruit" cx="380.2" cy="243.8" r="2.8"/>
-        </svg>
-        <div class="brand-wrap">
-          <p class="hand">De la Ribera a la taula</p>
-          <p class="place">Alzira · La Ribera</p>
-        </div>
-      </aside>
-      <div class="main">
-      <header class="top">
-        <p>VALADRE</p>
-        <svg viewBox="0 0 180 60" role="img" aria-label="Rama de olivo"><use href="#olive-branch"/></svg>
-      </header>
-        <div class="col intro">
-          <header class="chap"><p class="num">VALADRE</p><h2>La casa</h2><p class="sub">Alzira · La Ribera</p></header>
-          <p class="ribera">Entre naranjos, arrozales y el paso tranquilo del Xúquer, cocinamos con lo que nos da la Ribera: producto de temporada, fuego de carbón y recetas para compartir.</p>
-          <div class="legend">
-            <p class="label">Recomendados</p>
-            <p class="rec-legend"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#azahar"/></svg>La flor de azahar señala los platos favoritos de la casa.</p>
-          </div>
-          <div class="legend">
-            <p class="label">Alérgenos</p>
-            <ul class="allergens grid"><li><i>1</i>Gluten</li><li><i>2</i>Crustáceos</li><li><i>3</i>Huevo</li><li><i>4</i>Pescado</li><li><i>5</i>Cacahuetes</li><li><i>6</i>Soja</li><li><i>7</i>Lácteos</li><li><i>8</i>Frutos de cáscara</li><li><i>9</i>Apio</li><li><i>10</i>Mostaza</li><li><i>11</i>Sésamo</li><li><i>12</i>Sulfitos</li><li><i>13</i>Altramuces</li><li><i>14</i>Moluscos</li></ul>
-          </div>
-          <p class="fine">Precios en euros · IVA incluido. Si tiene alguna alergia o intolerancia, consulte a nuestro personal.</p>
-          <div class="sign">
-            <svg class="sprig" viewBox="0 0 80 46" aria-hidden="true"><use href="#orange-sprig"/></svg>
-            <p class="hand">Bon profit!</p>
-          </div>
-        </div>
-      </div>
+      </svg>
     </article>
   </div>
 
