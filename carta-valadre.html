@@ -22,9 +22,10 @@
     --leaf-2: #9BB39E;
     --fruit: #3F4A26;
     --orange: #D07328;
-    --cover: #56633A;
-    --cover-ink: #F8F5EC;
-    --cover-tree: #56633A;
+    --cover: #A9BD9A;
+    --cover-ink: #2F3A1F;
+    --cover-tree: #A9BD9A;
+    --cover-accent: #B4581A;
     --shadow: 0 1px 2px rgba(60, 55, 35, .06), 0 18px 40px -18px rgba(60, 55, 35, .28);
   }
   @media (prefers-color-scheme: dark) {
@@ -47,9 +48,10 @@
       --leaf-2: #6F917A;
       --fruit: #D2DBAE;
       --orange: #EE9A55;
-      --cover: #2E3820;
-      --cover-ink: #ECE8DA;
-      --cover-tree: #2E3820;
+      --cover: #3A4832;
+      --cover-ink: #E6EAD6;
+      --cover-tree: #3A4832;
+      --cover-accent: #EE9A55;
       --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 18px 40px -18px rgba(0, 0, 0, .6);
     }
   }
@@ -72,9 +74,10 @@
     --leaf-2: #6F917A;
     --fruit: #D2DBAE;
     --orange: #EE9A55;
-    --cover: #2E3820;
-    --cover-ink: #ECE8DA;
-    --cover-tree: #2E3820;
+    --cover: #3A4832;
+    --cover-ink: #E6EAD6;
+    --cover-tree: #3A4832;
+    --cover-accent: #EE9A55;
     --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 18px 40px -18px rgba(0, 0, 0, .6);
   }
 
@@ -156,7 +159,7 @@
     margin: 0;
     color: var(--orange);
   }
-  .cover .hand { font-size: 2.1rem; }
+  .cover .hand { font-size: 2.1rem; color: var(--cover-accent); }
 
   /* ── Hojas interiores ── */
   .slats {
@@ -280,13 +283,16 @@
     line-height: 1;
   }
 
-  .feature {
+  .feature-box {
     background: var(--mint-soft);
     border: 1px solid var(--mint);
     border-radius: 2px;
-    padding: 26px clamp(18px, 4vw, 30px) 28px clamp(30px, 5vw, 40px);
+    padding: 20px clamp(16px, 3vw, 24px) 22px clamp(30px, 5vw, 36px);
+    margin-left: clamp(-36px, -5vw, -30px);
+    display: grid;
+    gap: 16px;
   }
-  .feature .chap-sub { border-color: var(--mint); }
+  .feature-box .section-note { margin: 0; }
 
   .sign { text-align: center; display: grid; justify-items: center; gap: 8px; padding-top: 4px; }
   .sprig { width: 64px; height: auto; }
@@ -1043,12 +1049,13 @@
       <svg class="branch" viewBox="0 0 180 60" role="img" aria-label="Rama de olivo"><use href="#olive-branch"/></svg>
     </header>
     <div class="body">
-      <section class="section feature" id="cap-05">
+      <section class="section" id="cap-05">
         <header class="chap">
           <p class="chap-num">Capítulo 05</p>
           <h2>A la brasa del Kamado</h2>
           <p class="chap-sub">El sabor de lo hecho sin prisa</p>
         </header>
+        <div class="feature-box">
         <p class="section-note">Horno cerámico de carbón vegetal: calor envolvente, cocción lenta y el aroma de la brasa.</p>
         <ul class="dishes">
           <li class="dish">
@@ -1075,6 +1082,7 @@
             <span class="alg" aria-label="Alérgenos: 4, 10, 11"><i>4</i><i>10</i><i>11</i></span>
           </li>
         </ul>
+        </div>
       </section>
 
       <section class="section" id="cap-06">
@@ -1120,6 +1128,11 @@
       <svg class="branch" viewBox="0 0 180 60" role="img" aria-label="Rama de olivo"><use href="#olive-branch"/></svg>
     </header>
     <div class="body">
+      <header class="chap">
+        <p class="chap-num">Valadre</p>
+        <h2>La casa</h2>
+        <p class="chap-sub">Alzira · La Ribera</p>
+      </header>
       <p class="ribera">Entre naranjos, arrozales y el paso tranquilo del Xúquer, cocinamos con lo que nos da la Ribera: producto de temporada, fuego de carbón y recetas para compartir.</p>
       <div class="legend">
         <p class="legend-title">Recomendados</p>
