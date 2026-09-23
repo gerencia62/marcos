@@ -267,7 +267,7 @@
     color: var(--ink-soft);
     max-width: 52ch;
   }
-  .alg { grid-column: 1; display: flex; flex-wrap: wrap; gap: 3px; margin-top: 3px; }
+  .alg { display: inline-flex; flex-wrap: wrap; gap: 3px; align-self: center; }
   .alg i, .allergens i {
     font-style: normal;
     font-size: .58rem;
@@ -757,46 +757,39 @@
         </header>
         <ul class="dishes">
           <li class="dish">
-            <span class="dish-name">Focaccia</span>
+            <span class="dish-name">Focaccia <span class="alg" aria-label="Alérgenos: 1"><i>1</i></span></span>
             <span class="price">4,90</span>
             <p class="desc">Focaccia natural, pomodoro y aceitunas</p>
-            <span class="alg" aria-label="Alérgenos: 1"><i>1</i></span>
           </li>
           <li class="dish rec">
-            <span class="dish-name"><svg class="azahar" viewBox="0 0 24 24" role="img" aria-label="Recomendado"><use href="#azahar"/></svg>Bravas Amparín</span>
+            <span class="dish-name"><svg class="azahar" viewBox="0 0 24 24" role="img" aria-label="Recomendado"><use href="#azahar"/></svg>Bravas Amparín <span class="alg" aria-label="Alérgenos: 3"><i>3</i></span></span>
             <span class="price">6,90</span>
             <p class="desc">Con nuestra salsa amparín de la casa y alioli</p>
-            <span class="alg" aria-label="Alérgenos: 3"><i>3</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Queso brie frito</span>
+            <span class="dish-name">Queso brie frito <span class="alg" aria-label="Alérgenos: 1, 7, 3"><i>1</i><i>7</i><i>3</i></span></span>
             <span class="price">8,50</span>
             <p class="desc">Brie empanado, mermelada de tomate y sweet chili con un toque picante</p>
-            <span class="alg" aria-label="Alérgenos: 1, 7, 3"><i>1</i><i>7</i><i>3</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Provolone</span>
+            <span class="dish-name">Provolone <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span></span>
             <span class="price">9,00</span>
             <p class="desc">Queso provolone y salsa de pomodoro gratinado al horno, con tostaditas</p>
-            <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Buñuelos de bacalao <small>6 uds</small></span>
+            <span class="dish-name">Buñuelos de bacalao <small>6 uds</small> <span class="alg" aria-label="Alérgenos: 1, 4, 3"><i>1</i><i>4</i><i>3</i></span></span>
             <span class="price">7,50</span>
             <p class="desc">Con nuestra receta y alioli de ajo negro</p>
-            <span class="alg" aria-label="Alérgenos: 1, 4, 3"><i>1</i><i>4</i><i>3</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Croquetas de carbonara <small>4 uds</small></span>
+            <span class="dish-name">Croquetas de carbonara <small>4 uds</small> <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span></span>
             <span class="price">6,90</span>
             <p class="desc">Con panceta ibérica y queso parmesano</p>
-            <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Croquetas de foie y longaniza <small>4 uds</small></span>
+            <span class="dish-name">Croquetas de foie y longaniza <small>4 uds</small> <span class="alg" aria-label="Alérgenos: 1, 7, 3"><i>1</i><i>7</i><i>3</i></span></span>
             <span class="price">6,90</span>
             <p class="desc">Con un toque de mayonesa de trufa</p>
-            <span class="alg" aria-label="Alérgenos: 1, 7, 3"><i>1</i><i>7</i><i>3</i></span>
           </li>
           <li class="dish">
             <span class="dish-name">Flor de alcachofa confitada</span>
@@ -804,34 +797,29 @@
             <p class="desc">Alcachofa confitada con lascas de paleta ibérica</p>
           </li>
           <li class="dish">
-            <span class="dish-name">Ensaladilla de verduras y ventresca</span>
+            <span class="dish-name">Ensaladilla de verduras y ventresca <span class="alg" aria-label="Alérgenos: 4, 1, 3"><i>4</i><i>1</i><i>3</i></span></span>
             <span class="price">7,60</span>
             <p class="desc">Con encurtidos y galleta de cristal</p>
-            <span class="alg" aria-label="Alérgenos: 4, 1, 3"><i>4</i><i>1</i><i>3</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Ensalada César</span>
+            <span class="dish-name">Ensalada César <span class="alg" aria-label="Alérgenos: 1, 7, 3, 4, 10"><i>1</i><i>7</i><i>3</i><i>4</i><i>10</i></span></span>
             <span class="price">12,50</span>
             <p class="desc">Pollo milanesa, tomate cherry, parmesano, picatostes y salsa césar</p>
-            <span class="alg" aria-label="Alérgenos: 1, 7, 3, 4, 10"><i>1</i><i>7</i><i>3</i><i>4</i><i>10</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Burrata con tomate de temporada</span>
+            <span class="dish-name">Burrata con tomate de temporada <span class="alg" aria-label="Alérgenos: 7, 8"><i>7</i><i>8</i></span></span>
             <span class="price">14,50</span>
             <p class="desc">Rúcula salvaje, pesto de albahaca y tomates asados</p>
-            <span class="alg" aria-label="Alérgenos: 7, 8"><i>7</i><i>8</i></span>
           </li>
           <li class="dish rec">
-            <span class="dish-name"><svg class="azahar" viewBox="0 0 24 24" role="img" aria-label="Recomendado"><use href="#azahar"/></svg>Calamar de playa en dos texturas</span>
+            <span class="dish-name"><svg class="azahar" viewBox="0 0 24 24" role="img" aria-label="Recomendado"><use href="#azahar"/></svg>Calamar de playa en dos texturas <span class="alg" aria-label="Alérgenos: 1, 14, 3"><i>1</i><i>14</i><i>3</i></span></span>
             <span class="price">14,50</span>
             <p class="desc">A la parrilla y en tempura, con all i pebrat y salsa Mery</p>
-            <span class="alg" aria-label="Alérgenos: 1, 14, 3"><i>1</i><i>14</i><i>3</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Pulpo a la brasa</span>
+            <span class="dish-name">Pulpo a la brasa <span class="alg" aria-label="Alérgenos: 14"><i>14</i></span></span>
             <span class="price">18,50</span>
             <p class="desc">Sobre parmentier de patata y pimentón de la Vera semipicante</p>
-            <span class="alg" aria-label="Alérgenos: 14"><i>14</i></span>
           </li>
         </ul>
       </section>
@@ -857,52 +845,44 @@
         </header>
         <ul class="dishes">
           <li class="dish">
-            <span class="dish-name">Margherita</span>
+            <span class="dish-name">Margherita <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span></span>
             <span class="price">9,90</span>
             <p class="desc">Tomate, mozzarella y albahaca fresca</p>
-            <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Toscana</span>
+            <span class="dish-name">Toscana <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span></span>
             <span class="price">12,90</span>
             <p class="desc">Pomodoro, mozzarella, prosciutto crudo, rúcula, parmesano y AOVE</p>
-            <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Alcapone</span>
+            <span class="dish-name">Alcapone <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span></span>
             <span class="price">12,00</span>
             <p class="desc">Tomate, mozzarella, panceta y salame picante</p>
-            <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Prosciutto Cotto</span>
+            <span class="dish-name">Prosciutto Cotto <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span></span>
             <span class="price">11,70</span>
             <p class="desc">Tomate, mozzarella y jamón dulce</p>
-            <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span>
           </li>
           <li class="dish rec">
-            <span class="dish-name"><svg class="azahar" viewBox="0 0 24 24" role="img" aria-label="Recomendado"><use href="#azahar"/></svg>Mortallina</span>
+            <span class="dish-name"><svg class="azahar" viewBox="0 0 24 24" role="img" aria-label="Recomendado"><use href="#azahar"/></svg>Mortallina <span class="alg" aria-label="Alérgenos: 1, 7, 8"><i>1</i><i>7</i><i>8</i></span></span>
             <span class="price">14,40</span>
             <p class="desc">Tomate, mozzarella, mortadela, burrata y pesto de pistacho</p>
-            <span class="alg" aria-label="Alérgenos: 1, 7, 8"><i>1</i><i>7</i><i>8</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Per Tutti</span>
+            <span class="dish-name">Per Tutti <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span></span>
             <span class="price">12,00</span>
             <p class="desc">Tomate, mozzarella, berenjena, calabacín, cherrys y champiñones</p>
-            <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Diavola</span>
+            <span class="dish-name">Diavola <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span></span>
             <span class="price">12,50</span>
             <p class="desc">Tomate, mozzarella, salame picante y guindilla</p>
-            <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Carbonara</span>
+            <span class="dish-name">Carbonara <span class="alg" aria-label="Alérgenos: 1, 7, 3"><i>1</i><i>7</i><i>3</i></span></span>
             <span class="price">12,50</span>
             <p class="desc">Mozzarella, yema de huevo, panceta, pecorino y pimienta negra</p>
-            <span class="alg" aria-label="Alérgenos: 1, 7, 3"><i>1</i><i>7</i><i>3</i></span>
           </li>
         </ul>
       </section>
@@ -915,46 +895,39 @@
         </header>
         <ul class="dishes">
           <li class="dish">
-            <span class="dish-name">Ravioli amatriciana</span>
+            <span class="dish-name">Ravioli amatriciana <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span></span>
             <span class="price">11,90</span>
             <p class="desc">Relleno de ternera, pomodoro, panceta y pecorino</p>
-            <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Spaghetti carbonara</span>
+            <span class="dish-name">Spaghetti carbonara <span class="alg" aria-label="Alérgenos: 1, 3, 7"><i>1</i><i>3</i><i>7</i></span></span>
             <span class="price">10,50</span>
             <p class="desc">Yema de huevo, panceta, pecorino y pimienta negra</p>
-            <span class="alg" aria-label="Alérgenos: 1, 3, 7"><i>1</i><i>3</i><i>7</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Fiocchi cuatro quesos</span>
+            <span class="dish-name">Fiocchi cuatro quesos <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span></span>
             <span class="price">11,90</span>
             <p class="desc">Rellenos de pera y gorgonzola</p>
-            <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Rigatone al ragù</span>
+            <span class="dish-name">Rigatone al ragù <span class="alg" aria-label="Alérgenos: 1"><i>1</i></span></span>
             <span class="price">10,50</span>
             <p class="desc">Salsa de pomodoro al ragù de ternera</p>
-            <span class="alg" aria-label="Alérgenos: 1"><i>1</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Lasaña</span>
+            <span class="dish-name">Lasaña <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span></span>
             <span class="price">12,90</span>
             <p class="desc">Ragù de ternera y cebolla caramelizada</p>
-            <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span>
           </li>
           <li class="dish rec">
-            <span class="dish-name"><svg class="azahar" viewBox="0 0 24 24" role="img" aria-label="Recomendado"><use href="#azahar"/></svg>Canelones de pollo</span>
+            <span class="dish-name"><svg class="azahar" viewBox="0 0 24 24" role="img" aria-label="Recomendado"><use href="#azahar"/></svg>Canelones de pollo <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span></span>
             <span class="price">12,80</span>
             <p class="desc">Relleno de pollo y setas, bechamel de maíz y polvo de quicos</p>
-            <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Canelones de verdura</span>
+            <span class="dish-name">Canelones de verdura <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span></span>
             <span class="price">11,50</span>
             <p class="desc">Espinacas y ricotta, gratinados con bechamel</p>
-            <span class="alg" aria-label="Alérgenos: 1, 7"><i>1</i><i>7</i></span>
           </li>
         </ul>
       </section>
@@ -977,46 +950,39 @@
         <p class="section-note">Precio por ración y persona. Los calderos se sirven a partir de dos raciones, para el mejor punto del arroz · solo a mediodía.</p>
         <ul class="dishes">
           <li class="dish">
-            <span class="dish-name">Fideuá de marisco y gambón</span>
+            <span class="dish-name">Fideuá de marisco y gambón <span class="alg" aria-label="Alérgenos: 1, 2, 14"><i>1</i><i>2</i><i>14</i></span></span>
             <span class="price">11,50</span>
             <p class="desc">Con salmorreta y fideo fino</p>
-            <span class="alg" aria-label="Alérgenos: 1, 2, 14"><i>1</i><i>2</i><i>14</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Fideuá negra con sepia</span>
+            <span class="dish-name">Fideuá negra con sepia <span class="alg" aria-label="Alérgenos: 1, 14"><i>1</i><i>14</i></span></span>
             <span class="price">11,50</span>
             <p class="desc">Fondo de pescado y salmorreta</p>
-            <span class="alg" aria-label="Alérgenos: 1, 14"><i>1</i><i>14</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Fideuá de sepia y sobrasada</span>
+            <span class="dish-name">Fideuá de sepia y sobrasada <span class="alg" aria-label="Alérgenos: 1, 14"><i>1</i><i>14</i></span></span>
             <span class="price">12,50</span>
             <p class="desc">Con sobrasada ibérica, fideo fino y cebolla caramelizada</p>
-            <span class="alg" aria-label="Alérgenos: 1, 14"><i>1</i><i>14</i></span>
           </li>
           <li class="dish rec">
-            <span class="dish-name"><svg class="azahar" viewBox="0 0 24 24" role="img" aria-label="Recomendado"><use href="#azahar"/></svg>Arroz de bogavante</span>
+            <span class="dish-name"><svg class="azahar" viewBox="0 0 24 24" role="img" aria-label="Recomendado"><use href="#azahar"/></svg>Arroz de bogavante <span class="alg" aria-label="Alérgenos: 2"><i>2</i></span></span>
             <span class="price">18,00</span>
             <p class="desc">Con salmorreta</p>
-            <span class="alg" aria-label="Alérgenos: 2"><i>2</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Arroz a banda con alioli negro</span>
+            <span class="dish-name">Arroz a banda con alioli negro <span class="alg" aria-label="Alérgenos: 4, 2, 14, 3"><i>4</i><i>2</i><i>14</i><i>3</i></span></span>
             <span class="price">12,00</span>
             <p class="desc">Con salmorreta y marisco variado</p>
-            <span class="alg" aria-label="Alérgenos: 4, 2, 14, 3"><i>4</i><i>2</i><i>14</i><i>3</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Fideuá de solomillo ibérico</span>
+            <span class="dish-name">Fideuá de solomillo ibérico <span class="alg" aria-label="Alérgenos: 1"><i>1</i></span></span>
             <span class="price">11,50</span>
             <p class="desc">Con setas y ajos tiernos</p>
-            <span class="alg" aria-label="Alérgenos: 1"><i>1</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Fideuá de pato, ajetes y setas</span>
+            <span class="dish-name">Fideuá de pato, ajetes y setas <span class="alg" aria-label="Alérgenos: 1"><i>1</i></span></span>
             <span class="price">12,50</span>
             <p class="desc">Con fideo fino y pato confitado</p>
-            <span class="alg" aria-label="Alérgenos: 1"><i>1</i></span>
           </li>
           <li class="dish">
             <span class="dish-name">Arroz de pato, ajetes y setas</span>
@@ -1064,22 +1030,19 @@
             <p class="desc">A la brasa lenta, con patatas y pimientos</p>
           </li>
           <li class="dish rec">
-            <span class="dish-name"><svg class="azahar" viewBox="0 0 24 24" role="img" aria-label="Recomendado"><use href="#azahar"/></svg>Medio costillar ibérico</span>
+            <span class="dish-name"><svg class="azahar" viewBox="0 0 24 24" role="img" aria-label="Recomendado"><use href="#azahar"/></svg>Medio costillar ibérico <span class="alg" aria-label="Alérgenos: 6, 10"><i>6</i><i>10</i></span></span>
             <span class="price">9,50</span>
             <p class="desc">36 h a baja temperatura, glaseado con salsa barbacoa de bourbon</p>
-            <span class="alg" aria-label="Alérgenos: 6, 10"><i>6</i><i>10</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Bacalao all i pebre</span>
+            <span class="dish-name">Bacalao all i pebre <span class="alg" aria-label="Alérgenos: 4"><i>4</i></span></span>
             <span class="price">14,50</span>
             <p class="desc">Guiso tradicional valenciano con pimentón y patata</p>
-            <span class="alg" aria-label="Alérgenos: 4"><i>4</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Salmón a la mostaza y parmentier</span>
+            <span class="dish-name">Salmón a la mostaza y parmentier <span class="alg" aria-label="Alérgenos: 4, 10, 11"><i>4</i><i>10</i><i>11</i></span></span>
             <span class="price">12,40</span>
             <p class="desc">A la plancha, con salsa de mostaza y parmentier de patata</p>
-            <span class="alg" aria-label="Alérgenos: 4, 10, 11"><i>4</i><i>10</i><i>11</i></span>
           </li>
         </ul>
         </div>
@@ -1093,28 +1056,24 @@
         </header>
         <ul class="dishes">
           <li class="dish">
-            <span class="dish-name">Tiramisú</span>
+            <span class="dish-name">Tiramisú <span class="alg" aria-label="Alérgenos: 1, 3, 7, 8"><i>1</i><i>3</i><i>7</i><i>8</i></span></span>
             <span class="price">6,50</span>
             <p class="desc">Clásico, con mascarpone y licor de café con amaretto</p>
-            <span class="alg" aria-label="Alérgenos: 1, 3, 7, 8"><i>1</i><i>3</i><i>7</i><i>8</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Torrija caramelizada</span>
+            <span class="dish-name">Torrija caramelizada <span class="alg" aria-label="Alérgenos: 1, 3, 7"><i>1</i><i>3</i><i>7</i></span></span>
             <span class="price">6,50</span>
             <p class="desc">Con canela y helado de leche merengada</p>
-            <span class="alg" aria-label="Alérgenos: 1, 3, 7"><i>1</i><i>3</i><i>7</i></span>
           </li>
           <li class="dish rec">
-            <span class="dish-name"><svg class="azahar" viewBox="0 0 24 24" role="img" aria-label="Recomendado"><use href="#azahar"/></svg>Tarta de queso <small>para compartir</small></span>
+            <span class="dish-name"><svg class="azahar" viewBox="0 0 24 24" role="img" aria-label="Recomendado"><use href="#azahar"/></svg>Tarta de queso <small>para compartir</small> <span class="alg" aria-label="Alérgenos: 1, 3, 7, 8"><i>1</i><i>3</i><i>7</i><i>8</i></span></span>
             <span class="price">8,50</span>
             <p class="desc">Cremosa, con dulce de pistacho y su crujiente</p>
-            <span class="alg" aria-label="Alérgenos: 1, 3, 7, 8"><i>1</i><i>3</i><i>7</i><i>8</i></span>
           </li>
           <li class="dish">
-            <span class="dish-name">Cremoso de chocolate</span>
+            <span class="dish-name">Cremoso de chocolate <span class="alg" aria-label="Alérgenos: 1, 3, 7"><i>1</i><i>3</i><i>7</i></span></span>
             <span class="price">6,50</span>
             <p class="desc">70 % negro, con sal en escamas y brownie</p>
-            <span class="alg" aria-label="Alérgenos: 1, 3, 7"><i>1</i><i>3</i><i>7</i></span>
           </li>
         </ul>
       </section>

@@ -80,6 +80,30 @@
   .rec-legend svg { width: 18px; height: 18px; }
   .allergens.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px 14px; font-size: 12px; color: var(--ink-soft); }
   .allergens.grid i { width: 15px; height: 15px; font-size: 8.5px; }
+  .page.back { background: var(--cover); color: var(--cover-ink); grid-template-rows: 1fr auto; text-align: center; }
+  .back-in { display: grid; justify-items: center; align-content: center; gap: 12px; padding: 40px 60px 0; }
+  .back-branch { width: 120px; height: auto; margin-bottom: 8px; }
+  .page.back .brand { font-size: 58px; }
+  .page.back .hand { font-size: 40px; margin-top: 22px; }
+  .back-text { margin: 4px 0 10px; font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-size: 20px; line-height: 1.45; }
+  .frieze { width: 100%; height: auto; display: block; }
+  .frieze .ln { fill: none; stroke: var(--cover-ink); stroke-width: 1.3; stroke-linecap: round; }
+  .frieze .tree { fill: var(--cover-tree); stroke: var(--cover-ink); stroke-width: 1.1; stroke-linejoin: round; }
+  .frieze .fruit { fill: var(--orange); }
+  /* Hoja 3 lleva cuatro capítulos: mismo diseño, espacios más ajustados */
+  .dense .cols > .col { padding-top: 14px; gap: 13px; }
+  /* Dos filas: los encabezados de cada fila quedan a la misma altura */
+  .cols.rows { grid-template-rows: auto 1fr; }
+  .cols.rows > .col:nth-child(2n) { border-left: 1px solid var(--rule); }
+  .cols.rows > .col:nth-child(2n+1) { border-left: 0; }
+  .cols.rows > .col:nth-child(n+3) { padding-top: 6px; }
+  .dense .block { gap: 7px; }
+  .dense .dishes { gap: 3px; }
+  .dense .chap { padding-bottom: 5px; }
+  .dense .chap h2 { font-size: 22px; }
+  .dense .sub { font-size: 14.5px; }
+  .dense .desc { font-size: 14px; line-height: 1.15; }
+  .dense .feature-box { padding-block: 9px 10px; gap: 6px; }
   .sign { display: grid; justify-items: center; gap: 6px; padding-top: 6px; }
   .sprig { width: 58px; height: auto; }
 
@@ -558,7 +582,7 @@
   </div>
 
   <div class="stage">
-    <article class="page" aria-label="Hoja 2">
+    <article class="page" aria-label="Hoja 2: para compartir y arroces">
       <header class="top">
         <p>VALADRE</p>
         <svg viewBox="0 0 180 60" role="img" aria-label="Rama de olivo"><use href="#olive-branch"/></svg>
@@ -586,51 +610,6 @@
         </div>
         <div class="col">
         <section class="block">
-          <header class="chap"><p class="num">02</p><h2>Pizzas</h2><p class="sub">Del horno, masa lenta y buen producto</p></header>
-          <ul class="dishes">
-            <li class="dish"><span class="name">Margherita</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">9,90</span><p class="desc">Tomate, mozzarella y albahaca fresca</p></li>
-            <li class="dish"><span class="name">Toscana</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">12,90</span><p class="desc">Pomodoro, mozzarella, prosciutto crudo, rúcula, parmesano y AOVE</p></li>
-            <li class="dish"><span class="name">Alcapone</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">12,00</span><p class="desc">Tomate, mozzarella, panceta y salame picante</p></li>
-            <li class="dish"><span class="name">Prosciutto Cotto</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">11,70</span><p class="desc">Tomate, mozzarella y jamón dulce</p></li>
-            <li class="dish"><svg class="azahar" viewBox="0 0 24 24" role="img" aria-label="Recomendado"><use href="#azahar"/></svg><span class="name">Mortallina</span><span class="alg" aria-label="Alérgenos: 1,7,8"><i>1</i><i>7</i><i>8</i></span><span class="price">14,40</span><p class="desc">Tomate, mozzarella, mortadela, burrata y pesto de pistacho</p></li>
-            <li class="dish"><span class="name">Per Tutti</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">12,00</span><p class="desc">Tomate, mozzarella, berenjena, calabacín, cherrys y champiñones</p></li>
-            <li class="dish"><span class="name">Diavola</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">12,50</span><p class="desc">Tomate, mozzarella, salame picante y guindilla</p></li>
-            <li class="dish"><span class="name">Carbonara</span><span class="alg" aria-label="Alérgenos: 1,7,3"><i>1</i><i>7</i><i>3</i></span><span class="price">12,50</span><p class="desc">Mozzarella, yema de huevo, panceta, pecorino y pimienta negra</p></li>
-            </ul>
-        </section>
-        </div>
-      </div>
-      <footer class="foot">
-        <span class="rec"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#azahar"/></svg>Recomendado</span>
-        <ul class="allergens"><li><i>1</i>Gluten</li><li><i>2</i>Crustáceos</li><li><i>3</i>Huevo</li><li><i>4</i>Pescado</li><li><i>5</i>Cacahuetes</li><li><i>6</i>Soja</li><li><i>7</i>Lácteos</li><li><i>8</i>Frutos de cáscara</li><li><i>9</i>Apio</li><li><i>10</i>Mostaza</li><li><i>11</i>Sésamo</li><li><i>12</i>Sulfitos</li><li><i>13</i>Altramuces</li><li><i>14</i>Moluscos</li></ul>
-        <span class="pg">2 / 4</span>
-      </footer>
-    </article>
-  </div>
-
-  <div class="stage">
-    <article class="page" aria-label="Hoja 3">
-      <header class="top">
-        <p>VALADRE</p>
-        <svg viewBox="0 0 180 60" role="img" aria-label="Rama de olivo"><use href="#olive-branch"/></svg>
-      </header>
-      <div class="cols">
-        <div class="col">
-        <section class="block">
-          <header class="chap"><p class="num">03</p><h2>Pastas y gratinados</h2><p class="sub">Para las sobremesas largas</p></header>
-          <ul class="dishes">
-            <li class="dish"><span class="name">Ravioli amatriciana</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">11,90</span><p class="desc">Relleno de ternera, pomodoro, panceta y pecorino</p></li>
-            <li class="dish"><span class="name">Spaghetti carbonara</span><span class="alg" aria-label="Alérgenos: 1,3,7"><i>1</i><i>3</i><i>7</i></span><span class="price">10,50</span><p class="desc">Yema de huevo, panceta, pecorino y pimienta negra</p></li>
-            <li class="dish"><span class="name">Fiocchi cuatro quesos</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">11,90</span><p class="desc">Rellenos de pera y gorgonzola</p></li>
-            <li class="dish"><span class="name">Rigatone al ragù</span><span class="alg" aria-label="Alérgenos: 1"><i>1</i></span><span class="price">10,50</span><p class="desc">Salsa de pomodoro al ragù de ternera</p></li>
-            <li class="dish"><span class="name">Lasaña</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">12,90</span><p class="desc">Ragù de ternera y cebolla caramelizada</p></li>
-            <li class="dish"><svg class="azahar" viewBox="0 0 24 24" role="img" aria-label="Recomendado"><use href="#azahar"/></svg><span class="name">Canelones de pollo</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">12,80</span><p class="desc">Relleno de pollo y setas, bechamel de maíz y polvo de quicos</p></li>
-            <li class="dish"><span class="name">Canelones de verdura</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">11,50</span><p class="desc">Espinacas y ricotta, gratinados con bechamel</p></li>
-            </ul>
-        </section>
-        </div>
-        <div class="col">
-        <section class="block">
           <header class="chap"><p class="num">04</p><h2>Arroces y fideuás</h2><p class="sub">La Ribera en la paella: arroz, fuego y paciencia</p></header>
           <p class="note">Precio por ración y persona. Los calderos se sirven a partir de dos raciones, para el mejor punto del arroz · solo a mediodía.</p>
             <ul class="dishes">
@@ -651,18 +630,47 @@
       <footer class="foot">
         <span class="rec"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#azahar"/></svg>Recomendado</span>
         <ul class="allergens"><li><i>1</i>Gluten</li><li><i>2</i>Crustáceos</li><li><i>3</i>Huevo</li><li><i>4</i>Pescado</li><li><i>5</i>Cacahuetes</li><li><i>6</i>Soja</li><li><i>7</i>Lácteos</li><li><i>8</i>Frutos de cáscara</li><li><i>9</i>Apio</li><li><i>10</i>Mostaza</li><li><i>11</i>Sésamo</li><li><i>12</i>Sulfitos</li><li><i>13</i>Altramuces</li><li><i>14</i>Moluscos</li></ul>
-        <span class="pg">3 / 4</span>
+        <span class="pg">2 / 4</span>
       </footer>
     </article>
   </div>
 
   <div class="stage">
-    <article class="page" aria-label="Hoja 4">
+    <article class="page dense" aria-label="Hoja 3: pastas, kamado, pizzas y postres">
       <header class="top">
         <p>VALADRE</p>
         <svg viewBox="0 0 180 60" role="img" aria-label="Rama de olivo"><use href="#olive-branch"/></svg>
       </header>
-      <div class="cols">
+      <div class="cols rows">
+        <div class="col">
+        <section class="block">
+          <header class="chap"><p class="num">03</p><h2>Pastas y gratinados</h2><p class="sub">Para las sobremesas largas</p></header>
+          <ul class="dishes">
+            <li class="dish"><span class="name">Ravioli amatriciana</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">11,90</span><p class="desc">Relleno de ternera, pomodoro, panceta y pecorino</p></li>
+            <li class="dish"><span class="name">Spaghetti carbonara</span><span class="alg" aria-label="Alérgenos: 1,3,7"><i>1</i><i>3</i><i>7</i></span><span class="price">10,50</span><p class="desc">Yema de huevo, panceta, pecorino y pimienta negra</p></li>
+            <li class="dish"><span class="name">Fiocchi cuatro quesos</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">11,90</span><p class="desc">Rellenos de pera y gorgonzola</p></li>
+            <li class="dish"><span class="name">Rigatone al ragù</span><span class="alg" aria-label="Alérgenos: 1"><i>1</i></span><span class="price">10,50</span><p class="desc">Salsa de pomodoro al ragù de ternera</p></li>
+            <li class="dish"><span class="name">Lasaña</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">12,90</span><p class="desc">Ragù de ternera y cebolla caramelizada</p></li>
+            <li class="dish"><svg class="azahar" viewBox="0 0 24 24" role="img" aria-label="Recomendado"><use href="#azahar"/></svg><span class="name">Canelones de pollo</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">12,80</span><p class="desc">Relleno de pollo y setas, bechamel de maíz y polvo de quicos</p></li>
+            <li class="dish"><span class="name">Canelones de verdura</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">11,50</span><p class="desc">Espinacas y ricotta, gratinados con bechamel</p></li>
+            </ul>
+        </section>
+        </div>
+        <div class="col">
+        <section class="block">
+          <header class="chap"><p class="num">02</p><h2>Pizzas</h2><p class="sub">Del horno, masa lenta y buen producto</p></header>
+          <ul class="dishes">
+            <li class="dish"><span class="name">Margherita</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">9,90</span><p class="desc">Tomate, mozzarella y albahaca fresca</p></li>
+            <li class="dish"><span class="name">Toscana</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">12,90</span><p class="desc">Pomodoro, mozzarella, prosciutto crudo, rúcula, parmesano y AOVE</p></li>
+            <li class="dish"><span class="name">Alcapone</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">12,00</span><p class="desc">Tomate, mozzarella, panceta y salame picante</p></li>
+            <li class="dish"><span class="name">Prosciutto Cotto</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">11,70</span><p class="desc">Tomate, mozzarella y jamón dulce</p></li>
+            <li class="dish"><svg class="azahar" viewBox="0 0 24 24" role="img" aria-label="Recomendado"><use href="#azahar"/></svg><span class="name">Mortallina</span><span class="alg" aria-label="Alérgenos: 1,7,8"><i>1</i><i>7</i><i>8</i></span><span class="price">14,40</span><p class="desc">Tomate, mozzarella, mortadela, burrata y pesto de pistacho</p></li>
+            <li class="dish"><span class="name">Per Tutti</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">12,00</span><p class="desc">Tomate, mozzarella, berenjena, calabacín, cherrys y champiñones</p></li>
+            <li class="dish"><span class="name">Diavola</span><span class="alg" aria-label="Alérgenos: 1,7"><i>1</i><i>7</i></span><span class="price">12,50</span><p class="desc">Tomate, mozzarella, salame picante y guindilla</p></li>
+            <li class="dish"><span class="name">Carbonara</span><span class="alg" aria-label="Alérgenos: 1,7,3"><i>1</i><i>7</i><i>3</i></span><span class="price">12,50</span><p class="desc">Mozzarella, yema de huevo, panceta, pecorino y pimienta negra</p></li>
+            </ul>
+        </section>
+        </div>
         <div class="col">
         <section class="block">
           <header class="chap"><p class="num">05</p><h2>A la brasa del Kamado</h2><p class="sub">El sabor de lo hecho sin prisa</p></header>
@@ -685,17 +693,134 @@
             <li class="dish"><span class="name">Cremoso de chocolate</span><span class="alg" aria-label="Alérgenos: 1,3,7"><i>1</i><i>3</i><i>7</i></span><span class="price">6,50</span><p class="desc">70 % negro, con sal en escamas y brownie</p></li>
             </ul>
         </section>
-          <div class="sign" style="padding-top:28px">
-            <svg class="sprig" viewBox="0 0 80 46" aria-hidden="true"><use href="#orange-sprig"/></svg>
-            <p class="hand" style="color:var(--orange)">El amor, a la mesa</p>
-          </div>
         </div>
       </div>
       <footer class="foot">
         <span class="rec"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#azahar"/></svg>Recomendado</span>
         <ul class="allergens"><li><i>1</i>Gluten</li><li><i>2</i>Crustáceos</li><li><i>3</i>Huevo</li><li><i>4</i>Pescado</li><li><i>5</i>Cacahuetes</li><li><i>6</i>Soja</li><li><i>7</i>Lácteos</li><li><i>8</i>Frutos de cáscara</li><li><i>9</i>Apio</li><li><i>10</i>Mostaza</li><li><i>11</i>Sésamo</li><li><i>12</i>Sulfitos</li><li><i>13</i>Altramuces</li><li><i>14</i>Moluscos</li></ul>
-        <span class="pg">4 / 4</span>
+        <span class="pg">3 / 4</span>
       </footer>
+    </article>
+  </div>
+
+  <div class="stage">
+    <article class="page back" aria-label="Contraportada">
+      <div class="back-in">
+        <svg class="back-branch" viewBox="0 0 180 60" aria-hidden="true"><use href="#olive-branch"/></svg>
+        <p class="brand">VALADRE</p>
+        <p class="tagline">Cocina mediterránea</p>
+        <p class="hand">Gràcies per vindre!</p>
+        <p class="back-text">Aquí la mesa siempre está puesta.<br>Vuelve cuando quieras: la Ribera te espera.</p>
+        <p class="place">Alzira · La Ribera</p>
+      </div>
+      <svg class="frieze" viewBox="0 0 1123 190" role="img" aria-label="Hilera de naranjos">
+        <path class="ln" d="M0 176 C 200 170, 420 180, 620 174 S 960 170, 1123 176"/>
+        <path class="ln" d="M28.0 174.2 V 140.0"/>
+        <path class="tree" d="M58.5 120.0 L54.2 129.8 L48.2 138.2 L39.1 144.1 L28.0 144.4 L17.1 143.8 L7.4 138.6 L0.4 130.3 L1.3 120.0 L2.5 110.5 L9.2 103.1 L16.5 95.2 L28.0 93.6 L38.1 98.1 L49.7 100.5 L56.3 109.5 Z"/>
+        <circle class="fruit" cx="33.3" cy="123.3" r="3.4"/>
+        <circle class="fruit" cx="16.3" cy="106.2" r="3.4"/>
+        <circle class="fruit" cx="29.0" cy="107.5" r="3.4"/>
+        <circle class="fruit" cx="17.4" cy="112.7" r="3.4"/>
+        <circle class="fruit" cx="11.9" cy="119.0" r="3.4"/>
+        <path class="ln" d="M99.2 174.1 V 135.2"/>
+        <path class="tree" d="M132.4 112.5 L129.2 123.6 L122.7 133.6 L111.5 139.2 L99.2 140.6 L85.8 141.6 L74.5 134.7 L67.6 124.2 L65.7 112.5 L70.1 101.6 L77.3 92.7 L87.2 86.4 L99.2 85.3 L112.2 84.4 L121.8 92.2 L130.8 100.7 Z"/>
+        <circle class="fruit" cx="94.8" cy="127.3" r="3.9"/>
+        <circle class="fruit" cx="112.7" cy="96.3" r="3.9"/>
+        <circle class="fruit" cx="87.9" cy="125.8" r="3.9"/>
+        <circle class="fruit" cx="98.0" cy="128.0" r="3.9"/>
+        <circle class="fruit" cx="95.2" cy="98.6" r="3.9"/>
+        <path class="ln" d="M180.9 173.1 V 134.9"/>
+        <path class="tree" d="M210.6 112.7 L209.5 123.3 L205.0 134.4 L193.5 140.2 L180.9 139.5 L169.2 138.0 L159.8 131.6 L153.6 122.9 L147.6 112.7 L153.0 102.3 L158.2 92.3 L168.8 86.5 L180.9 85.5 L193.5 85.3 L202.0 93.7 L210.9 101.5 Z"/>
+        <circle class="fruit" cx="166.2" cy="110.2" r="3.8"/>
+        <circle class="fruit" cx="169.9" cy="105.4" r="3.8"/>
+        <circle class="fruit" cx="198.8" cy="122.3" r="3.8"/>
+        <circle class="fruit" cx="173.4" cy="124.9" r="3.8"/>
+        <circle class="fruit" cx="169.8" cy="109.3" r="3.8"/>
+        <path class="ln" d="M264.4 172.4 V 135.9"/>
+        <path class="tree" d="M297.2 114.6 L291.2 124.6 L285.1 133.2 L276.6 141.0 L264.4 141.2 L253.1 139.1 L244.4 132.6 L238.1 124.4 L233.6 114.6 L237.5 104.6 L242.5 94.9 L253.0 89.8 L264.4 87.4 L276.9 87.5 L285.9 95.3 L292.8 104.0 Z"/>
+        <circle class="fruit" cx="277.8" cy="105.0" r="3.7"/>
+        <circle class="fruit" cx="251.8" cy="127.0" r="3.7"/>
+        <circle class="fruit" cx="276.0" cy="107.0" r="3.7"/>
+        <circle class="fruit" cx="253.1" cy="121.9" r="3.7"/>
+        <circle class="fruit" cx="280.5" cy="105.4" r="3.7"/>
+        <path class="ln" d="M346.5 174.4 V 135.0"/>
+        <path class="tree" d="M379.0 112.1 L374.9 122.6 L368.0 131.4 L360.0 141.4 L346.5 140.4 L333.6 140.2 L324.2 132.1 L314.7 123.9 L313.2 112.1 L317.2 101.1 L324.5 92.2 L333.5 83.8 L346.5 84.6 L358.6 85.9 L370.0 91.0 L378.6 100.1 Z"/>
+        <circle class="fruit" cx="351.0" cy="104.8" r="3.9"/>
+        <circle class="fruit" cx="363.0" cy="102.3" r="3.9"/>
+        <circle class="fruit" cx="327.5" cy="104.5" r="3.9"/>
+        <circle class="fruit" cx="344.4" cy="97.6" r="3.9"/>
+        <circle class="fruit" cx="333.8" cy="107.7" r="3.9"/>
+        <path class="ln" d="M428.2 173.4 V 143.1"/>
+        <path class="tree" d="M455.1 125.3 L453.4 134.7 L446.6 141.9 L438.2 147.0 L428.2 148.4 L419.1 145.2 L411.6 140.3 L406.6 133.4 L401.2 125.3 L404.1 116.3 L409.0 108.0 L419.3 105.9 L428.2 102.1 L437.9 104.4 L446.8 108.6 L450.9 116.9 Z"/>
+        <circle class="fruit" cx="443.4" cy="114.6" r="3.0"/>
+        <circle class="fruit" cx="429.6" cy="131.3" r="3.0"/>
+        <circle class="fruit" cx="440.4" cy="131.4" r="3.0"/>
+        <circle class="fruit" cx="434.4" cy="132.8" r="3.0"/>
+        <circle class="fruit" cx="440.8" cy="121.6" r="3.0"/>
+        <path class="ln" d="M496.4 175.5 V 135.9"/>
+        <path class="tree" d="M529.0 112.8 L528.3 124.7 L521.1 135.0 L509.2 140.5 L496.4 143.1 L484.0 139.7 L472.8 134.1 L465.4 124.3 L465.6 112.8 L465.2 101.1 L471.2 90.1 L483.0 83.7 L496.4 82.0 L508.8 85.8 L520.6 91.0 L527.3 101.3 Z"/>
+        <circle class="fruit" cx="494.1" cy="123.9" r="4.0"/>
+        <circle class="fruit" cx="479.9" cy="121.0" r="4.0"/>
+        <circle class="fruit" cx="477.8" cy="116.1" r="4.0"/>
+        <circle class="fruit" cx="495.7" cy="103.9" r="4.0"/>
+        <circle class="fruit" cx="504.3" cy="112.7" r="4.0"/>
+        <path class="ln" d="M579.0 173.0 V 133.2"/>
+        <path class="tree" d="M609.7 109.9 L608.7 121.0 L603.2 131.7 L591.1 136.2 L579.0 138.2 L565.5 139.3 L555.0 131.6 L548.7 121.3 L543.8 109.9 L549.2 98.8 L554.9 88.2 L566.9 83.7 L579.0 80.4 L592.4 81.0 L604.1 87.4 L611.6 97.8 Z"/>
+        <circle class="fruit" cx="574.4" cy="112.7" r="4.0"/>
+        <circle class="fruit" cx="571.7" cy="97.9" r="4.0"/>
+        <circle class="fruit" cx="578.9" cy="121.1" r="4.0"/>
+        <circle class="fruit" cx="592.9" cy="116.9" r="4.0"/>
+        <circle class="fruit" cx="597.0" cy="102.5" r="4.0"/>
+        <path class="ln" d="M655.8 173.1 V 138.9"/>
+        <path class="tree" d="M683.0 118.9 L681.8 128.6 L676.4 137.4 L666.7 142.6 L655.8 143.8 L644.3 143.9 L634.1 138.5 L629.7 128.7 L629.3 118.9 L631.5 109.9 L634.5 99.7 L645.7 97.0 L655.8 92.4 L666.9 95.0 L675.4 101.4 L683.4 108.7 Z"/>
+        <circle class="fruit" cx="639.4" cy="108.6" r="3.4"/>
+        <circle class="fruit" cx="654.3" cy="105.4" r="3.4"/>
+        <circle class="fruit" cx="667.1" cy="111.5" r="3.4"/>
+        <circle class="fruit" cx="643.5" cy="106.0" r="3.4"/>
+        <circle class="fruit" cx="660.2" cy="117.4" r="3.4"/>
+        <path class="ln" d="M729.7 175.2 V 138.6"/>
+        <path class="tree" d="M762.4 117.2 L758.7 128.0 L750.2 135.7 L741.3 142.5 L729.7 143.3 L718.9 140.6 L708.1 136.5 L700.5 128.1 L700.7 117.2 L702.5 107.0 L708.6 98.2 L717.6 91.0 L729.7 89.6 L741.6 91.3 L752.1 96.9 L757.4 106.8 Z"/>
+        <circle class="fruit" cx="740.4" cy="129.6" r="3.7"/>
+        <circle class="fruit" cx="714.5" cy="130.4" r="3.7"/>
+        <circle class="fruit" cx="737.8" cy="105.9" r="3.7"/>
+        <circle class="fruit" cx="727.9" cy="121.0" r="3.7"/>
+        <circle class="fruit" cx="744.7" cy="113.4" r="3.7"/>
+        <path class="ln" d="M806.7 175.2 V 135.8"/>
+        <path class="tree" d="M841.8 112.9 L836.8 124.1 L830.5 134.3 L818.7 138.9 L806.7 143.4 L793.5 141.5 L783.0 134.2 L775.4 124.6 L775.4 112.9 L774.5 100.9 L781.7 90.4 L793.2 83.5 L806.7 83.2 L819.9 84.3 L829.2 92.6 L839.0 100.8 Z"/>
+        <circle class="fruit" cx="820.7" cy="107.9" r="3.9"/>
+        <circle class="fruit" cx="790.3" cy="110.9" r="3.9"/>
+        <circle class="fruit" cx="808.7" cy="121.7" r="3.9"/>
+        <circle class="fruit" cx="806.2" cy="97.4" r="3.9"/>
+        <circle class="fruit" cx="818.9" cy="98.6" r="3.9"/>
+        <path class="ln" d="M891.5 173.3 V 142.5"/>
+        <path class="tree" d="M918.4 124.5 L913.9 132.8 L908.7 139.9 L901.4 145.9 L891.5 148.4 L881.1 147.0 L872.8 141.3 L866.0 133.9 L865.8 124.5 L866.0 115.0 L874.5 109.2 L882.1 104.0 L891.5 101.2 L901.0 103.8 L910.4 107.5 L915.8 115.4 Z"/>
+        <circle class="fruit" cx="892.2" cy="133.3" r="3.1"/>
+        <circle class="fruit" cx="893.4" cy="119.6" r="3.1"/>
+        <circle class="fruit" cx="887.8" cy="133.3" r="3.1"/>
+        <circle class="fruit" cx="903.9" cy="116.9" r="3.1"/>
+        <circle class="fruit" cx="902.3" cy="136.5" r="3.1"/>
+        <path class="ln" d="M958.3 172.8 V 137.1"/>
+        <path class="tree" d="M988.2 116.3 L985.8 126.6 L979.7 135.6 L968.8 139.2 L958.3 145.1 L946.9 141.1 L937.6 134.9 L929.5 127.0 L928.3 116.3 L930.9 106.1 L936.6 96.8 L947.7 93.3 L958.3 89.4 L969.5 91.9 L980.9 96.0 L987.6 105.4 Z"/>
+        <circle class="fruit" cx="950.1" cy="115.5" r="3.6"/>
+        <circle class="fruit" cx="945.0" cy="114.3" r="3.6"/>
+        <circle class="fruit" cx="969.6" cy="128.2" r="3.6"/>
+        <circle class="fruit" cx="957.5" cy="110.9" r="3.6"/>
+        <circle class="fruit" cx="947.3" cy="119.8" r="3.6"/>
+        <path class="ln" d="M1038.7 175.1 V 144.8"/>
+        <path class="tree" d="M1062.1 127.1 L1060.9 135.3 L1055.8 142.5 L1048.7 148.7 L1038.7 149.2 L1029.3 147.6 L1020.5 143.5 L1016.8 135.2 L1012.5 127.1 L1016.8 118.9 L1020.8 110.9 L1029.4 106.9 L1038.7 105.4 L1048.4 105.9 L1056.4 111.1 L1061.6 118.5 Z"/>
+        <circle class="fruit" cx="1036.1" cy="127.8" r="3.0"/>
+        <circle class="fruit" cx="1028.4" cy="119.6" r="3.0"/>
+        <circle class="fruit" cx="1042.7" cy="130.6" r="3.0"/>
+        <circle class="fruit" cx="1039.6" cy="135.9" r="3.0"/>
+        <circle class="fruit" cx="1042.1" cy="136.1" r="3.0"/>
+        <path class="ln" d="M1100.6 175.2 V 137.6"/>
+        <path class="tree" d="M1134.0 115.6 L1128.7 126.1 L1122.1 135.0 L1113.4 143.4 L1100.6 142.6 L1087.6 143.8 L1077.0 136.8 L1073.2 125.8 L1070.5 115.6 L1070.5 104.4 L1079.2 96.3 L1089.3 91.1 L1100.6 85.8 L1112.4 89.8 L1123.8 94.7 L1127.8 105.4 Z"/>
+        <circle class="fruit" cx="1096.9" cy="121.4" r="3.8"/>
+        <circle class="fruit" cx="1082.4" cy="106.2" r="3.8"/>
+        <circle class="fruit" cx="1107.4" cy="128.5" r="3.8"/>
+        <circle class="fruit" cx="1118.2" cy="103.5" r="3.8"/>
+        <circle class="fruit" cx="1100.8" cy="123.7" r="3.8"/>
+      </svg>
     </article>
   </div>
 
