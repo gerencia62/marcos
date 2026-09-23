@@ -1,0 +1,611 @@
+<meta charset="utf-8">
+<title>Carta Valadre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Jost:wght@300;400;500&family=Marcellus&display=swap">
+<style>
+  :root {
+    --ground: #ECE8DC;
+    --paper: #F8F5EC;
+    --slat: #FFFDF7;
+    --slat-line: #E3DDCC;
+    --ink: #2C3124;
+    --ink-soft: #5F6453;
+    --olive: #5B6838;
+    --olive-deep: #434E27;
+    --mint: #CFE2D3;
+    --mint-soft: #E4EEE4;
+    --sea: #5E9A8A;
+    --wood: #7B5638;
+    --rule: #D6D2C0;
+    --leaf: #6F7D48;
+    --leaf-2: #9BB39E;
+    --fruit: #3F4A26;
+    --shadow: 0 1px 2px rgba(60, 55, 35, .06), 0 18px 40px -18px rgba(60, 55, 35, .25);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --ground: #171B13;
+      --paper: #20261B;
+      --slat: #272E21;
+      --slat-line: #1B2016;
+      --ink: #ECE8DA;
+      --ink-soft: #B3B7A3;
+      --olive: #B9C58F;
+      --olive-deep: #D2DBAE;
+      --mint: #2E3D32;
+      --mint-soft: #26312A;
+      --sea: #8CC3B3;
+      --wood: #D1A57F;
+      --rule: #3A4232;
+      --leaf: #9FAE72;
+      --leaf-2: #6F917A;
+      --fruit: #D2DBAE;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 18px 40px -18px rgba(0, 0, 0, .6);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --ground: #171B13;
+    --paper: #20261B;
+    --slat: #272E21;
+    --slat-line: #1B2016;
+    --ink: #ECE8DA;
+    --ink-soft: #B3B7A3;
+    --olive: #B9C58F;
+    --olive-deep: #D2DBAE;
+    --mint: #2E3D32;
+    --mint-soft: #26312A;
+    --sea: #8CC3B3;
+    --wood: #D1A57F;
+    --rule: #3A4232;
+    --leaf: #9FAE72;
+    --leaf-2: #6F917A;
+    --fruit: #D2DBAE;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 18px 40px -18px rgba(0, 0, 0, .6);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font: 300 16px/1.55 "Jost", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+    padding-inline: 16px;
+    padding-block: 32px 56px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .menu {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr));
+    gap: 28px;
+  }
+
+  .sheet {
+    background: var(--paper);
+    box-shadow: var(--shadow);
+    border-radius: 3px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Panelado de listones blancos: la cabecera de cada hoja */
+  .slats {
+    background:
+      repeating-linear-gradient(90deg,
+        var(--slat) 0 22px,
+        var(--slat-line) 22px 23px);
+    border-bottom: 1px solid var(--rule);
+    padding: 40px 28px 34px;
+    text-align: center;
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+  }
+  .slats.short { padding: 26px 28px 22px; }
+
+  .branch { width: 132px; height: auto; display: block; }
+  .branch.small { width: 92px; }
+
+  .brand {
+    font-family: "Marcellus", "Cormorant Garamond", Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(2.6rem, 7vw, 3.9rem);
+    letter-spacing: .32em;
+    margin: 0;
+    padding-left: .32em; /* compensa el tracking para centrar ópticamente */
+    line-height: 1;
+    color: var(--olive-deep);
+  }
+  .tagline {
+    margin: 0;
+    font-size: .74rem;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .sheet-title {
+    margin: 0;
+    font-family: "Marcellus", Georgia, serif;
+    font-weight: 400;
+    font-size: 1.05rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--olive-deep);
+    padding-left: .3em;
+  }
+
+  .body {
+    padding: 36px clamp(22px, 5vw, 52px) 40px;
+    display: grid;
+    gap: 40px;
+    flex: 1;
+    align-content: start;
+  }
+
+  .section { display: grid; gap: 18px; }
+  .section-head {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .section-head h2 {
+    margin: 0;
+    font-family: "Marcellus", Georgia, serif;
+    font-weight: 400;
+    font-size: 1.55rem;
+    letter-spacing: .06em;
+    color: var(--olive-deep);
+    text-wrap: balance;
+  }
+  .section-head span {
+    height: 1px;
+    background: var(--rule);
+    transform: translateY(-5px);
+  }
+  .section-note {
+    margin: -8px 0 0;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+  }
+
+  .dishes { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+  .dish {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 18px;
+    row-gap: 2px;
+  }
+  .dish-name {
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: .01em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 10px;
+  }
+  .price {
+    font-weight: 400;
+    font-variant-numeric: tabular-nums lining-nums;
+    color: var(--olive-deep);
+    white-space: nowrap;
+    text-align: right;
+  }
+  .dish-name small { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
+  .price small { font-size: .72rem; color: var(--ink-soft); letter-spacing: .04em; }
+  .desc {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic;
+    font-size: 1.08rem;
+    line-height: 1.35;
+    color: var(--ink-soft);
+    max-width: 52ch;
+  }
+  .alg {
+    font-size: .66rem;
+    letter-spacing: .08em;
+    color: var(--sea);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  /* Un único bloque destacado por hoja: fondo menta, como la puerta del local */
+  .feature {
+    background: var(--mint-soft);
+    border: 1px solid var(--mint);
+    border-radius: 2px;
+    padding: 24px clamp(18px, 4vw, 30px) 26px;
+    display: grid;
+    gap: 14px;
+  }
+  .feature .section-note { color: var(--ink); }
+
+  .foot {
+    border-top: 1px solid var(--rule);
+    padding: 22px clamp(22px, 5vw, 52px) 26px;
+    display: grid;
+    gap: 12px;
+    font-size: .78rem;
+    color: var(--ink-soft);
+  }
+  .foot p { margin: 0; }
+  .allergens {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 4px 16px;
+  }
+  .allergens b { color: var(--sea); font-weight: 500; font-variant-numeric: tabular-nums; display: inline-block; min-width: 1.6em; }
+  .foot-title {
+    font-size: .64rem;
+    letter-spacing: .24em;
+    text-transform: uppercase;
+    color: var(--olive-deep);
+  }
+
+  @media (max-width: 480px) {
+    body { padding-block: 16px 32px; }
+    .brand { letter-spacing: .22em; padding-left: .22em; }
+    .body { gap: 32px; }
+  }
+
+  @media print {
+    @page { size: A4; margin: 0; }
+    body { background: #fff; padding: 0; }
+    .menu { display: block; max-width: none; }
+    .sheet { box-shadow: none; border-radius: 0; min-height: 297mm; break-after: page; }
+  }
+</style>
+
+<!-- Rama de olivo reutilizable -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="olive-branch">
+      <path d="M8 40 C 50 30, 100 28, 172 36" fill="none" stroke="var(--wood)" stroke-width="1.6" stroke-linecap="round"/>
+      <g fill="var(--leaf)">
+        <ellipse cx="30" cy="30" rx="13" ry="3.6" transform="rotate(-28 30 30)"/>
+        <ellipse cx="56" cy="44" rx="14" ry="3.8" transform="rotate(24 56 44)"/>
+        <ellipse cx="82" cy="24" rx="14" ry="3.8" transform="rotate(-22 82 24)"/>
+        <ellipse cx="112" cy="42" rx="14" ry="3.8" transform="rotate(20 112 42)"/>
+        <ellipse cx="140" cy="26" rx="13" ry="3.6" transform="rotate(-18 140 26)"/>
+      </g>
+      <g fill="var(--leaf-2)">
+        <ellipse cx="44" cy="24" rx="11" ry="3.2" transform="rotate(-38 44 24)"/>
+        <ellipse cx="96" cy="44" rx="12" ry="3.4" transform="rotate(30 96 44)"/>
+        <ellipse cx="126" cy="24" rx="11" ry="3.2" transform="rotate(-30 126 24)"/>
+        <ellipse cx="160" cy="44" rx="11" ry="3.2" transform="rotate(26 160 44)"/>
+      </g>
+      <g fill="var(--fruit)">
+        <ellipse cx="70" cy="40" rx="4.2" ry="5.4"/>
+        <ellipse cx="150" cy="40" rx="4" ry="5.2"/>
+      </g>
+    </g>
+  </defs>
+</svg>
+
+<main class="menu">
+
+  <!-- ─────────── HOJA 1 ─────────── -->
+  <article class="sheet" aria-label="Carta, primera hoja">
+    <header class="slats">
+      <svg class="branch" viewBox="0 0 180 60" role="img" aria-label="Rama de olivo"><use href="#olive-branch"/></svg>
+      <h1 class="brand">VALADRE</h1>
+      <p class="tagline">Cocina mediterránea</p>
+    </header>
+
+    <div class="body">
+      <section class="section">
+        <div class="section-head"><h2>Para compartir</h2><span></span></div>
+        <ul class="dishes">
+          <li class="dish">
+            <span class="dish-name">Focaccia</span>
+            <span class="price">4,90</span>
+            <p class="desc">Focaccia natural, pomodoro y aceitunas. <span class="alg" aria-label="Alérgenos 1">1</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Bravas Amparín</span>
+            <span class="price">6,90</span>
+            <p class="desc">Con nuestra salsa amparín de la casa y alioli. <span class="alg" aria-label="Alérgenos 3">3</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Queso brie frito</span>
+            <span class="price">8,50</span>
+            <p class="desc">Brie empanado, mermelada de tomate y sweet chili con un toque picante. <span class="alg" aria-label="Alérgenos 1,7,3">1 · 7 · 3</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Provolone</span>
+            <span class="price">9,00</span>
+            <p class="desc">Queso provolone y salsa de pomodoro gratinado al horno, con tostaditas. <span class="alg" aria-label="Alérgenos 1,7">1 · 7</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Buñuelos de bacalao <small>6 uds</small></span>
+            <span class="price">7,50</span>
+            <p class="desc">Con nuestra receta y alioli de ajo negro. <span class="alg" aria-label="Alérgenos 1,4,3">1 · 4 · 3</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Croquetas de carbonara <small>4 uds</small></span>
+            <span class="price">6,90</span>
+            <p class="desc">Con panceta ibérica y queso parmesano. <span class="alg" aria-label="Alérgenos 1,7">1 · 7</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Croquetas de foie y longaniza <small>4 uds</small></span>
+            <span class="price">6,90</span>
+            <p class="desc">Con un toque de mayonesa de trufa. <span class="alg" aria-label="Alérgenos 1,7,3">1 · 7 · 3</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Flor de alcachofa confitada</span>
+            <span class="price">9,00</span>
+            <p class="desc">Alcachofa confitada con lascas de paleta ibérica.</p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Ensaladilla de verduras y ventresca</span>
+            <span class="price">7,60</span>
+            <p class="desc">Con encurtidos y galleta de cristal. <span class="alg" aria-label="Alérgenos 4,1,3">4 · 1 · 3</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Ensalada César</span>
+            <span class="price">12,50</span>
+            <p class="desc">Pollo milanesa, tomate cherry, parmesano, picatostes y salsa césar. <span class="alg" aria-label="Alérgenos 1,7,3,4,10">1 · 7 · 3 · 4 · 10</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Burrata con tomate de temporada</span>
+            <span class="price">14,50</span>
+            <p class="desc">Rúcula salvaje, pesto de albahaca y tomates asados. <span class="alg" aria-label="Alérgenos 7,8">7 · 8</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Calamar de playa en dos texturas</span>
+            <span class="price">14,50</span>
+            <p class="desc">A la parrilla y en tempura, con all i pebrat y salsa Mery. <span class="alg" aria-label="Alérgenos 1,14,3">1 · 14 · 3</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Pulpo a la brasa</span>
+            <span class="price">18,50</span>
+            <p class="desc">Sobre parmentier de patata y pimentón de la Vera semipicante. <span class="alg" aria-label="Alérgenos 14">14</span></p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><h2>Pizzas</h2><span></span></div>
+        <ul class="dishes">
+          <li class="dish">
+            <span class="dish-name">Margherita</span>
+            <span class="price">9,90</span>
+            <p class="desc">Tomate, mozzarella y albahaca fresca. <span class="alg" aria-label="Alérgenos 1,7">1 · 7</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Toscana</span>
+            <span class="price">12,90</span>
+            <p class="desc">Pomodoro, mozzarella, prosciutto crudo, rúcula, parmesano y AOVE. <span class="alg" aria-label="Alérgenos 1,7">1 · 7</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Alcapone</span>
+            <span class="price">12,00</span>
+            <p class="desc">Tomate, mozzarella, panceta y salame picante. <span class="alg" aria-label="Alérgenos 1,7">1 · 7</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Prosciutto Cotto</span>
+            <span class="price">11,70</span>
+            <p class="desc">Tomate, mozzarella y jamón dulce. <span class="alg" aria-label="Alérgenos 1,7">1 · 7</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Mortallina</span>
+            <span class="price">14,40</span>
+            <p class="desc">Tomate, mozzarella, mortadela, burrata y pesto de pistacho. <span class="alg" aria-label="Alérgenos 1,7,8">1 · 7 · 8</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Per Tutti</span>
+            <span class="price">12,00</span>
+            <p class="desc">Tomate, mozzarella, berenjena, calabacín, cherrys y champiñones. <span class="alg" aria-label="Alérgenos 1,7">1 · 7</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Diavola</span>
+            <span class="price">12,50</span>
+            <p class="desc">Tomate, mozzarella, salame picante y guindilla. <span class="alg" aria-label="Alérgenos 1,7">1 · 7</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Carbonara</span>
+            <span class="price">12,50</span>
+            <p class="desc">Mozzarella, yema de huevo, panceta, pecorino y pimienta negra. <span class="alg" aria-label="Alérgenos 1,7,3">1 · 7 · 3</span></p>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </article>
+
+  <!-- ─────────── HOJA 2 ─────────── -->
+  <article class="sheet" aria-label="Carta, segunda hoja">
+    <header class="slats short">
+      <svg class="branch small" viewBox="0 0 180 60" role="img" aria-label="Rama de olivo"><use href="#olive-branch"/></svg>
+      <p class="sheet-title">Pastas · Arroces · Kamado · Postres</p>
+    </header>
+
+    <div class="body">
+      <section class="section">
+        <div class="section-head"><h2>Pastas y gratinados</h2><span></span></div>
+        <ul class="dishes">
+          <li class="dish">
+            <span class="dish-name">Ravioli amatriciana</span>
+            <span class="price">11,90</span>
+            <p class="desc">Relleno de ternera, pomodoro, panceta y pecorino. <span class="alg" aria-label="Alérgenos 1,7">1 · 7</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Spaghetti carbonara</span>
+            <span class="price">10,50</span>
+            <p class="desc">Yema de huevo, panceta, pecorino y pimienta negra. <span class="alg" aria-label="Alérgenos 1,3,7">1 · 3 · 7</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Fiocchi cuatro quesos</span>
+            <span class="price">11,90</span>
+            <p class="desc">Rellenos de pera y gorgonzola. <span class="alg" aria-label="Alérgenos 1,7">1 · 7</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Rigatone al ragù</span>
+            <span class="price">10,50</span>
+            <p class="desc">Salsa de pomodoro al ragù de ternera. <span class="alg" aria-label="Alérgenos 1">1</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Lasaña</span>
+            <span class="price">12,90</span>
+            <p class="desc">Ragù de ternera y cebolla caramelizada. <span class="alg" aria-label="Alérgenos 1,7">1 · 7</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Canelones de pollo</span>
+            <span class="price">12,80</span>
+            <p class="desc">Relleno de pollo y setas, bechamel de maíz y polvo de quicos. <span class="alg" aria-label="Alérgenos 1,7">1 · 7</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Canelones de verdura</span>
+            <span class="price">11,50</span>
+            <p class="desc">Espinacas y ricotta, gratinados con bechamel. <span class="alg" aria-label="Alérgenos 1,7">1 · 7</span></p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><h2>Arroces y fideuás</h2><span></span></div>
+        <p class="section-note">Precio por ración y persona. Los calderos se sirven a partir de dos raciones, para el mejor punto del arroz · solo a mediodía.</p>
+        <ul class="dishes">
+          <li class="dish">
+            <span class="dish-name">Fideuá de marisco y gambón</span>
+            <span class="price">11,50</span>
+            <p class="desc">Con salmorreta y fideo fino. <span class="alg" aria-label="Alérgenos 1,2,14">1 · 2 · 14</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Fideuá negra con sepia</span>
+            <span class="price">11,50</span>
+            <p class="desc">Fondo de pescado y salmorreta. <span class="alg" aria-label="Alérgenos 1,14">1 · 14</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Fideuá de sepia y sobrasada</span>
+            <span class="price">12,50</span>
+            <p class="desc">Con sobrasada ibérica, fideo fino y cebolla caramelizada. <span class="alg" aria-label="Alérgenos 1,14">1 · 14</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Arroz de bogavante</span>
+            <span class="price">18,00</span>
+            <p class="desc">Con salmorreta. <span class="alg" aria-label="Alérgenos 2">2</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Arroz a banda con alioli negro</span>
+            <span class="price">12,00</span>
+            <p class="desc">Con salmorreta y marisco variado. <span class="alg" aria-label="Alérgenos 4,2,14,3">4 · 2 · 14 · 3</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Fideuá de solomillo ibérico</span>
+            <span class="price">11,50</span>
+            <p class="desc">Con setas y ajos tiernos. <span class="alg" aria-label="Alérgenos 1">1</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Fideuá de pato, ajetes y setas</span>
+            <span class="price">12,50</span>
+            <p class="desc">Con fideo fino y pato confitado. <span class="alg" aria-label="Alérgenos 1">1</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Arroz de pato, ajetes y setas</span>
+            <span class="price">12,50</span>
+            <p class="desc">Con grasa de pato.</p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Arroz de carrillada ibérica</span>
+            <span class="price">12,00</span>
+            <p class="desc">Con setas variadas y espárragos.</p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Arroz de blanquet y costilla</span>
+            <span class="price">11,50</span>
+            <p class="desc">Con fondo de montaña y garbanzos.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="feature">
+        <div class="section-head"><h2>A la brasa del Kamado</h2><span></span></div>
+        <p class="section-note">Horno cerámico de carbón vegetal: calor envolvente, cocción lenta y el aroma de la brasa.</p>
+        <ul class="dishes">
+          <li class="dish">
+            <span class="dish-name">Entrecot de vaca madurada</span>
+            <span class="price">22,50</span>
+            <p class="desc">A la brasa lenta, con patatas y pimientos.</p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Medio costillar ibérico</span>
+            <span class="price">9,50</span>
+            <p class="desc">36 h a baja temperatura, glaseado con salsa barbacoa de bourbon. <span class="alg" aria-label="Alérgenos 6,10">6 · 10</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Bacalao all i pebre</span>
+            <span class="price">14,50</span>
+            <p class="desc">Guiso tradicional valenciano con pimentón y patata. <span class="alg" aria-label="Alérgenos 4">4</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Salmón a la mostaza y parmentier</span>
+            <span class="price">12,40</span>
+            <p class="desc">A la plancha, con salsa de mostaza y parmentier de patata. <span class="alg" aria-label="Alérgenos 4,10,11">4 · 10 · 11</span></p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><h2>Postres</h2><span></span></div>
+        <ul class="dishes">
+          <li class="dish">
+            <span class="dish-name">Tiramisú</span>
+            <span class="price">6,50</span>
+            <p class="desc">Clásico, con mascarpone y licor de café con amaretto. <span class="alg" aria-label="Alérgenos 1,3,7,8">1 · 3 · 7 · 8</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Torrija caramelizada</span>
+            <span class="price">6,50</span>
+            <p class="desc">Con canela y helado de leche merengada. <span class="alg" aria-label="Alérgenos 1,3,7">1 · 3 · 7</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Tarta de queso <small>para compartir</small></span>
+            <span class="price">8,50</span>
+            <p class="desc">Cremosa, con dulce de pistacho y su crujiente. <span class="alg" aria-label="Alérgenos 1,3,7,8">1 · 3 · 7 · 8</span></p>
+          </li>
+          <li class="dish">
+            <span class="dish-name">Cremoso de chocolate</span>
+            <span class="price">6,50</span>
+            <p class="desc">70 % negro, con sal en escamas y brownie. <span class="alg" aria-label="Alérgenos 1,3,7">1 · 3 · 7</span></p>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <footer class="foot">
+      <p class="foot-title">Alérgenos</p>
+      <ul class="allergens">
+        <li><b>1</b>Gluten</li>
+        <li><b>2</b>Crustáceos</li>
+        <li><b>3</b>Huevo</li>
+        <li><b>4</b>Pescado</li>
+        <li><b>5</b>Cacahuetes</li>
+        <li><b>6</b>Soja</li>
+        <li><b>7</b>Lácteos</li>
+        <li><b>8</b>Frutos de cáscara</li>
+        <li><b>9</b>Apio</li>
+        <li><b>10</b>Mostaza</li>
+        <li><b>11</b>Sésamo</li>
+        <li><b>12</b>Sulfitos</li>
+        <li><b>13</b>Altramuces</li>
+        <li><b>14</b>Moluscos</li>
+
+      </ul>
+      <p>Precios en euros · IVA incluido. Consulte alérgenos a nuestro personal.</p>
+    </footer>
+  </article>
+
+</main>
